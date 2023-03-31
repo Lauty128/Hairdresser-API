@@ -5,10 +5,13 @@ import { Shift } from '../models/shifts.model.js';
 
 const getShifts = async (filters={}) => {
     try{
-        const data = await Shift.findAll(filters)
-        const status = data.length > 0 ? 200 : 204
-        return {data, status}
-
+        const { rows,count } = await Shift.findAndCountAll(filters)
+        const status = rows.length > 0 ? 200 : 204
+        return {
+            data:rows, 
+            total:count, 
+            status
+        }
     }
     catch(error){
         return {

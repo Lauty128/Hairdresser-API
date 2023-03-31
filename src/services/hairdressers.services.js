@@ -7,10 +7,13 @@ import { Hairdresser } from '../models/hairdressers.model.js';
 
 const getHairdressers = async (filters={}) => {
     try{
-        const data = await Hairdresser.findAll(filters)
-        const status = data.length > 0 ? 200 : 204
-        return {data, status}
-
+        const { rows,count } = await Hairdresser.findAndCountAll(filters)
+        const status = rows.length > 0 ? 200 : 204
+        return {
+            data:rows, 
+            total:count, 
+            status
+        }
     }
     catch(error){
         return {

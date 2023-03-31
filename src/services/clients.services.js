@@ -5,9 +5,13 @@ import { Client } from '../models/clients.model.js';
 
 const getClients = async (filters={}) => {
     try{
-        const data = await Client.findAll(filters)
-        const status = data.length > 0 ? 200 : 204
-        return {data, status}
+        const { rows,count } = await Client.findAndCountAll(filters)
+        const status = rows.length > 0 ? 200 : 204
+        return {
+            data:rows, 
+            total:count, 
+            status
+        }
     }
     catch(error){
         return {
