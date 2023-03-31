@@ -20,7 +20,7 @@
     router.put('/:id', controller.modifyClient) // modify a client
 
     //--- Relational tables
-    router.get(':id/shifts', controller.get_shifts_by_client) // Get relational table of client and shifts
+    router.get('/:id/shifts', controller.get_shifts_by_client) // Get relational table of client and shifts
 
 
 export { router as clientsRouter }

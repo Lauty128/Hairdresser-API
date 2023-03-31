@@ -4,6 +4,7 @@ import { sequelize } from "../config/sequelize.js";
 //---- Utils
 import { createPassword } from "../utils/password.js";
 
+const date = new Date()
 
 //---- Schema
 export const Shift = sequelize.define('shifts', {
@@ -14,8 +15,14 @@ export const Shift = sequelize.define('shifts', {
     },
     // client_id: DataTypes.STRING(20),
     // hairdresser_id: DataTypes.STRING(20),
-    data: DataTypes.DATE,
+    date: {
+        type: DataTypes.DATE,
+        defaultValue: date
+    },
     time: DataTypes.STRING,
-    finished: DataTypes.BOOLEAN,
+    finished:{
+        type : DataTypes.BOOLEAN, 
+        defaultValue: false    
+    }
 })
 

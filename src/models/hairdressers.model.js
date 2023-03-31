@@ -18,16 +18,30 @@ export const Hairdresser = sequelize.define('hairdressers', {
         primaryKey:true
     },
     name: DataTypes.STRING(50),
-    Image: DataTypes.STRING,
+    image: DataTypes.STRING,
     owner: DataTypes.STRING(50),
-    owner_image: DataTypes.STRING,
-    instagram: DataTypes.STRING,
-    phone: DataTypes.INTEGER,
+    owner_image: {
+        type: DataTypes.STRING,
+        defaultValue: null
+    },
+    instagram: {
+        type: DataTypes.STRING,
+        defaultValue: null
+    },
+    phone: {
+        type: DataTypes.STRING,
+        defaultValue: null
+    },
     user: DataTypes.STRING(50),
     password: DataTypes.STRING(50)
 })
 
 //---- Refs
-Hairdresser.hasMany(Client)
-Hairdresser.hasMany(Shift)
+Hairdresser.hasMany(Client, { foreignKey:"id_hairdresser" })
+Hairdresser.hasMany(Shift, { foreignKey:"id_hairdresser" })
+
+Client.belongsTo(Hairdresser, { foreignKey:"id_hairdresser" })
+Shift.belongsTo(Hairdresser, { foreignKey:"id_hairdresser" })
+
+
 

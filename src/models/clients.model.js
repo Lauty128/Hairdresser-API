@@ -18,8 +18,16 @@ export const Client = sequelize.define('clients', {
     },
     // hairdresser_id: DataTypes.STRING(20),
     name: DataTypes.STRING(50),
-    instagram: DataTypes.STRING,
-    phone: DataTypes.INTEGER
+    instagram: {
+        type: DataTypes.STRING,
+        defaultValue: null
+    },
+    phone: {
+        type: DataTypes.STRING,
+        defaultValue: null
+    },
 })
 
-Client.hasMany(Shift)
+Client.hasMany(Shift, { foreignKey: "id_client" })
+
+Shift.belongsTo(Client, { foreignKey: "id_client" })

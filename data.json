@@ -1,0 +1,59 @@
+{
+    "hairdressers" : [
+        {
+            "name": "Adams Barber",
+            "instagram": "https://www.instagram.com/peluqueria_bunny",
+            "image": "https://res.cloudinary.com/dyrpgj8od/image/upload/v1680138426/Parlor_grhsk8.jpg",
+            "owner": "Adams Smith",
+            "user": "adams_barber",
+            "password": "password"
+        },
+        {
+            "name": "Adams Barber II",
+            "instagram": "https://www.instagram.com/peluqueria_bunny",
+            "image": "https://res.cloudinary.com/dyrpgj8od/image/upload/v1680138426/Parlor_grhsk8.jpg",
+            "owner": "Adams Smith Junior",
+            "user": "adams_barber_ii",
+            "password": "password2"
+        },
+        {
+            "name": "Adams Barber III",
+            "instagram": "https://www.instagram.com/peluqueria_bunny",
+            "image": "https://res.cloudinary.com/dyrpgj8od/image/upload/v1680138426/Parlor_grhsk8.jpg",
+            "owner": "Adams Smith Junior II",
+            "user": "adams_barber_iii",
+            "password": "password3"
+        }
+    ],
+
+    "users":[
+        {
+            "name": "Lautaro Silverii",
+            "instagram": "https://www.instagram.com/lauty",
+            "phone":"2284552868",
+            "id_hairdresser":"xNZm5QkGcsqxufGpxmyF"
+        },
+        {
+            "name": "Alejo Silverii",
+            "instagram": "https://www.instagram.com/alejo",
+            "phone":"2284588228",
+            "id_hairdresser":"xNZm5QkGcsqxufGpxmyF"
+        },
+        {
+            "name": "Juan Rofriguex",
+            "instagram": "https://www.instagram.com/juacnho",
+            "id_hairdresser":"kJlJ98Avn9c9wUOc6Htc"
+        }
+    ],
+
+    "shifts":[
+        {
+            "time": "15:30",
+            "id_client": "B7gM8inQejJDhcAVB6VF",
+            "id_hairdresser": "xNZm5QkGcsqxufGpxmyF"
+        }
+    ]
+
+}
+
+

@@ -12,6 +12,8 @@
 
 //---- Middlewares
     app.use(morgan('dev'));
+    app.use(express.json())
+    app.use(express.urlencoded({ extended: false }))
     app.use(cors())
 
 //---- Routes
@@ -23,10 +25,14 @@
     app.use('/shift', shiftsRouter )
     app.use('/hairdresser', hairdressersRouter )
 
+    // import './models/clients.model.js';
+    // import './models/shifts.model.js';
+    // import './models/hairdressers.model.js';
+
 //---- Listen
     async function main(){
         try{
-            await sequelize.sync();
+            await sequelize.sync(/*{ alter:true }*/);
             console.log('Connection has been established successfully.');
             app.listen(PORT, ()=>{
                 console.log('Server on in port ' + PORT);
